@@ -20,6 +20,7 @@
 		6829FE2E21039D3D0069CEB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6829FE2D21039D3D0069CEB2 /* main.m */; };
 		6829FE3D21039D480069CEB2 /* WHDebugToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6829FE3621039D480069CEB2 /* WHDebugToolManager.m */; };
 		6829FE4021039D480069CEB2 /* WHDebugConsoleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6829FE3C21039D480069CEB2 /* WHDebugConsoleLabel.m */; };
+		7193A8582132E504009AD488 /* WHDebugNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7193A8572132E503009AD488 /* WHDebugNetworkMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		6829FE3721039D480069CEB2 /* WHDebugConsoleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDebugConsoleLabel.h; sourceTree = "<group>"; };
 		6829FE3A21039D480069CEB2 /* WHDebugToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDebugToolManager.h; sourceTree = "<group>"; };
 		6829FE3C21039D480069CEB2 /* WHDebugConsoleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDebugConsoleLabel.m; sourceTree = "<group>"; };
+		7193A8562132E503009AD488 /* WHDebugNetworkMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDebugNetworkMonitor.h; sourceTree = "<group>"; };
+		7193A8572132E503009AD488 /* WHDebugNetworkMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDebugNetworkMonitor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 		6829FE3421039D480069CEB2 /* WHDebugTool */ = {
 			isa = PBXGroup;
 			children = (
+				7193A8562132E503009AD488 /* WHDebugNetworkMonitor.h */,
+				7193A8572132E503009AD488 /* WHDebugNetworkMonitor.m */,
 				6829FE3721039D480069CEB2 /* WHDebugConsoleLabel.h */,
 				6829FE3C21039D480069CEB2 /* WHDebugConsoleLabel.m */,
 				680C095F21099C41000224C2 /* WHDebugMonitor.h */,
@@ -185,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6829FE2321039D3B0069CEB2 /* ViewController.m in Sources */,
+				7193A8582132E504009AD488 /* WHDebugNetworkMonitor.m in Sources */,
 				680C09732109BFC0000224C2 /* WHDebugTempVC.m in Sources */,
 				680C096A21099F97000224C2 /* WHDebugMemoryMonitor.m in Sources */,
 				680C096121099C41000224C2 /* WHDebugMonitor.m in Sources */,

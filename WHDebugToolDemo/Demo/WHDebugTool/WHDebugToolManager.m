@@ -30,6 +30,8 @@
 
 @property (nonatomic, strong) WHDebugConsoleLabel *cpuLabel;
 
+@property (nonatomic, strong) WHDebugConsoleLabel *networkLabel;
+
 @property (nonatomic, assign) BOOL isShowing;
 
 @property(nonatomic, strong) UIWindow *debugWindow;
@@ -72,6 +74,9 @@ static id _instance;
     if (type & DebugToolTypeCPU) {
         [self showCPU];
     }
+    if (type & DebugToolTypeNetwork) {
+        [self showNetwork];
+    }
 }
 
 #pragma mark - Window
@@ -109,6 +114,14 @@ static id _instance;
         [self.cpuLabel updateLabelWith:DebugToolLabelTypeCPU value:value];
     };
     [self show:self.cpuLabel];
+}
+
+- (void)showNetwork {
+    [[WHDebugCpuMonitor sharedInstance] startMonitoring];
+    [WHDebugCpuMonitor sharedInstance].valueBlock = ^(float value) {
+        [self.networkLabel updateLabelWith:DebugToolLabelTypeNetwork value:value];
+    };
+    [self show:self.networkLabel];
 }
 
 - (void)show:(WHDebugConsoleLabel *)consoleLabel {
@@ -180,4 +193,15 @@ static id _instance;
     return _fpsLabel;
 }
 
+
+- (WHDebugConsoleLabel *)networkLabel{
+    if(!_networkLabel){
+        _networkLabel = ({
+            WHDebugConsoleLabel * object = [[WHDebugConsoleLabel alloc]init];
+            object.frame = kFpsOriginFrame;
+            object;
+       });
+    }
+    return _networkLabel;
+}
 @end

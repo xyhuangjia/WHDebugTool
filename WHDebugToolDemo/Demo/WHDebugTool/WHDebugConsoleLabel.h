@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSUInteger, DebugToolLabelType) {
     DebugToolLabelTypeFPS,     
     DebugToolLabelTypeMemory,
-    DebugToolLabelTypeCPU
+    DebugToolLabelTypeCPU,
+    DebugToolLabelTypeNetwork
 };
 
 @interface WHDebugConsoleLabel : UILabel

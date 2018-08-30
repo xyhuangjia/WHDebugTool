@@ -45,6 +45,9 @@
         case DebugToolLabelTypeCPU:
             self.attributedText = [self cpuAttributedStringWith:value];
             break;
+        case DebugToolLabelTypeNetwork:
+            self.attributedText = [self networkAttributedStringWith:value];
+            break;
         default:
             break;
     }
@@ -78,6 +81,17 @@
     CGFloat progress = cpu / 100;
     UIColor *color = [self getColorByPercent:progress];
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d%% CPU",(int)round(cpu)]];
+    [text addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, text.length - 3)];
+    [text addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(text.length - 3, 3)];
+    [text addAttribute:NSFontAttributeName value:_font range:NSMakeRange(0, text.length)];
+    [text addAttribute:NSFontAttributeName value:_subFont range:NSMakeRange(text.length - 4, 1)];
+    return text;
+}
+
+- (NSAttributedString *)networkAttributedStringWith:(float)speed {
+    CGFloat progress = speed / 100;
+    UIColor *color = [self getColorByPercent:progress];
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%dk/s",(int)round(speed)]];
     [text addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, text.length - 3)];
     [text addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(text.length - 3, 3)];
     [text addAttribute:NSFontAttributeName value:_font range:NSMakeRange(0, text.length)];

@@ -13,7 +13,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     // DebugToolTypeMemory | DebugToolTypeCPU | DebugToolTypeFPS
-    [[WHDebugToolManager sharedInstance] toggleWith:DebugToolTypeAll];
+    [[WHDebugToolManager sharedInstance] toggleWith:DebugToolTypeNetwork];
 }
 
 @end
